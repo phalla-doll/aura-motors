@@ -49,7 +49,7 @@ export function CarCard({ car }: { car: Car }) {
             </div>
             <div className="flex flex-col items-center text-center">
               <span className="text-sm font-medium text-gray-900">
-                {car.condition === 100 ? "New" : "Secondhand"}
+                {car.condition}%
               </span>
               <span className="text-xs text-gray-500">Condition</span>
             </div>
