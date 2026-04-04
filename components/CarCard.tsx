@@ -39,15 +39,15 @@ export function CarCard({ car }: { car: Car }) {
 
         <div className="mt-auto pt-6">
           <div className="grid grid-cols-3 gap-4 border-t border-gray-100 pt-4">
-            <div className="flex flex-col">
+            <div className="flex flex-col items-center text-center">
               <span className="text-sm font-medium text-gray-900">{car.year}</span>
               <span className="text-xs text-gray-500">Year</span>
             </div>
-            <div className="flex flex-col">
-              <span className="text-sm font-medium text-gray-900 truncate" title={car.color}>{car.color}</span>
+            <div className="flex flex-col items-center text-center">
+              <span className="text-sm font-medium text-gray-900 truncate w-full" title={car.color}>{car.color}</span>
               <span className="text-xs text-gray-500">Color</span>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col items-center text-center">
               <span className="text-sm font-medium text-gray-900">
                 {car.condition === 100 ? "New" : "Secondhand"}
               </span>
