@@ -39,30 +39,20 @@ export function CarCard({ car }: { car: Car }) {
 
         <div className="mt-auto pt-6">
           <div className="grid grid-cols-3 gap-4 border-t border-gray-100 pt-4">
-            {car.specs.range && (
-              <div className="flex flex-col">
-                <span className="text-sm font-medium text-gray-900">{car.specs.range}</span>
-                <span className="text-xs text-gray-500">Range</span>
-              </div>
-            )}
-            {car.specs.acceleration && (
-              <div className="flex flex-col">
-                <span className="text-sm font-medium text-gray-900">{car.specs.acceleration.split(' ')[0]}</span>
-                <span className="text-xs text-gray-500">0-60 mph</span>
-              </div>
-            )}
-            {car.specs.topSpeed && (
-              <div className="flex flex-col">
-                <span className="text-sm font-medium text-gray-900">{car.specs.topSpeed}</span>
-                <span className="text-xs text-gray-500">Top Speed</span>
-              </div>
-            )}
-            {!car.specs.topSpeed && car.specs.power && (
-              <div className="flex flex-col">
-                <span className="text-sm font-medium text-gray-900">{car.specs.power}</span>
-                <span className="text-xs text-gray-500">Power</span>
-              </div>
-            )}
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-gray-900">{car.year}</span>
+              <span className="text-xs text-gray-500">Year</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-gray-900 truncate" title={car.color}>{car.color}</span>
+              <span className="text-xs text-gray-500">Color</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-medium text-gray-900">
+                {car.condition === 100 ? "New" : "Secondhand"}
+              </span>
+              <span className="text-xs text-gray-500">Condition</span>
+            </div>
           </div>
           
           <button className="w-full mt-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium transition-colors hover:bg-gray-800">
