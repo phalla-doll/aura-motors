@@ -12,6 +12,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedMake, setSelectedMake] = useState<string | null>(null);
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const categories = useMemo(() => {
     const cats = new Set(cars.map((car) => car.category));
@@ -33,9 +34,15 @@ export default function Home() {
       const categoryMatch = selectedCategory ? car.category === selectedCategory : true;
       const makeMatch = selectedMake ? car.make === selectedMake : true;
       const yearMatch = selectedYear ? car.year === selectedYear : true;
-      return categoryMatch && makeMatch && yearMatch;
+      
+      const searchMatch = searchQuery === "" || 
+        car.make.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        car.model.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        car.category.toLowerCase().includes(searchQuery.toLowerCase());
+
+      return categoryMatch && makeMatch && yearMatch && searchMatch;
     });
-  }, [selectedCategory, selectedMake, selectedYear]);
+  }, [selectedCategory, selectedMake, selectedYear, searchQuery]);
 
   return (
     <main className="min-h-screen bg-[#f5f5f7] font-sans selection:bg-gray-900 selection:text-white">
@@ -50,9 +57,11 @@ export default function Home() {
           selectedCategory={selectedCategory}
           selectedMake={selectedMake}
           selectedYear={selectedYear}
+          searchQuery={searchQuery}
           onCategoryChange={setSelectedCategory}
           onMakeChange={setSelectedMake}
           onYearChange={setSelectedYear}
+          onSearchChange={setSearchQuery}
         />
         <CarGrid cars={filteredCars} />
       </div>
