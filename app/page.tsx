@@ -13,6 +13,7 @@ export default function Home() {
   const [selectedMake, setSelectedMake] = useState<string | null>(null);
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState("");
 
   const categories = useMemo(() => {
     const cats = new Set(cars.map((car) => car.category));
@@ -30,7 +31,7 @@ export default function Home() {
   }, []);
 
   const filteredCars = useMemo(() => {
-    return cars.filter((car) => {
+    const filtered = cars.filter((car) => {
       const categoryMatch = selectedCategory ? car.category === selectedCategory : true;
       const makeMatch = selectedMake ? car.make === selectedMake : true;
       const yearMatch = selectedYear ? car.year === selectedYear : true;
@@ -42,7 +43,26 @@ export default function Home() {
 
       return categoryMatch && makeMatch && yearMatch && searchMatch;
     });
-  }, [selectedCategory, selectedMake, selectedYear, searchQuery]);
+
+    return filtered.sort((a, b) => {
+      switch (sortBy) {
+        case "price-asc":
+          return a.price - b.price;
+        case "price-desc":
+          return b.price - a.price;
+        case "year-desc":
+          return b.year - a.year;
+        case "year-asc":
+          return a.year - b.year;
+        case "model-asc":
+          return a.model.localeCompare(b.model);
+        case "model-desc":
+          return b.model.localeCompare(a.model);
+        default:
+          return 0;
+      }
+    });
+  }, [selectedCategory, selectedMake, selectedYear, searchQuery, sortBy]);
 
   return (
     <main className="min-h-screen bg-[#f5f5f7] font-sans selection:bg-gray-900 selection:text-white">
@@ -58,10 +78,12 @@ export default function Home() {
           selectedMake={selectedMake}
           selectedYear={selectedYear}
           searchQuery={searchQuery}
+          sortBy={sortBy}
           onCategoryChange={setSelectedCategory}
           onMakeChange={setSelectedMake}
           onYearChange={setSelectedYear}
           onSearchChange={setSearchQuery}
+          onSortChange={setSortBy}
         />
         <CarGrid cars={filteredCars} />
       </div>
