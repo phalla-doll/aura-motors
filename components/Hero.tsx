@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black flex flex-col items-center justify-between pt-24 pb-12">
+    <section className="relative h-[75vh] min-h-[600px] w-full overflow-hidden bg-black flex flex-col items-center justify-between pt-24 pb-12">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
