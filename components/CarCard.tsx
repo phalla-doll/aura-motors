@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { Car } from "@/lib/data";
 
-export function CarCard({ car }: { car: Car }) {
+export function CarCard({ car, onClick }: { car: Car; onClick?: () => void }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,10 @@ export function CarCard({ car }: { car: Car }) {
             </div>
           </div>
           
-          <button className="w-full mt-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium transition-colors hover:bg-gray-800">
+          <button 
+            onClick={onClick}
+            className="w-full mt-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium transition-colors hover:bg-gray-800"
+          >
             View Details
           </button>
         </div>

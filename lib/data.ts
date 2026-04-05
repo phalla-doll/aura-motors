@@ -15,6 +15,11 @@ export type Car = {
     topSpeed?: string;
     range?: string;
   };
+  seller: {
+    name: string;
+    phone: string;
+    image: string;
+  };
 };
 
 export const cars: Car[] = [
@@ -34,6 +39,11 @@ export const cars: Car[] = [
       acceleration: "1.99s 0-60 mph",
       range: "396 mi",
     },
+    seller: {
+      name: "Alex Johnson",
+      phone: "+1 (555) 123-4567",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop",
+    },
   },
   {
     id: "2",
@@ -50,6 +60,11 @@ export const cars: Car[] = [
       power: "450 hp",
       acceleration: "4.5s 0-60 mph",
       range: "320 mi",
+    },
+    seller: {
+      name: "Sarah Williams",
+      phone: "+1 (555) 987-6543",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
     },
   },
   {
@@ -68,6 +83,11 @@ export const cars: Car[] = [
       acceleration: "1.9s 0-60 mph",
       topSpeed: "250+ mph",
     },
+    seller: {
+      name: "Michael Chen",
+      phone: "+1 (555) 345-6789",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+    },
   },
   {
     id: "4",
@@ -84,6 +104,11 @@ export const cars: Car[] = [
       power: "280 hp",
       acceleration: "5.8s 0-60 mph",
       range: "410 mi",
+    },
+    seller: {
+      name: "Emily Davis",
+      phone: "+1 (555) 234-5678",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop",
     },
   },
   {
@@ -102,6 +127,11 @@ export const cars: Car[] = [
       acceleration: "3.9s 0-60 mph",
       range: "350 mi",
     },
+    seller: {
+      name: "David Wilson",
+      phone: "+1 (555) 876-5432",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+    },
   },
   {
     id: "6",
@@ -118,6 +148,11 @@ export const cars: Car[] = [
       power: "750 hp",
       acceleration: "2.8s 0-60 mph",
       topSpeed: "210 mph",
+    },
+    seller: {
+      name: "Jessica Taylor",
+      phone: "+1 (555) 456-7890",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
     },
   },
 ];
