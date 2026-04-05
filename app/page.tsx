@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { FilterBar } from "@/components/FilterBar";
 import { CarGrid } from "@/components/CarGrid";
+import { CarCarousel } from "@/components/CarCarousel";
 import { Footer } from "@/components/Footer";
 import { cars } from "@/lib/data";
 
@@ -68,11 +69,11 @@ export default function Home() {
 
   // Get some cars for the special sections
   const newArrivals = useMemo(() => {
-    return [...cars].sort((a, b) => b.year - a.year).slice(0, 3);
+    return [...cars].sort((a, b) => b.year - a.year);
   }, []);
 
   const recommendations = useMemo(() => {
-    return [...cars].sort((a, b) => b.condition - a.condition).slice(0, 3);
+    return [...cars].sort((a, b) => b.condition - a.condition);
   }, []);
 
   return (
@@ -99,12 +100,12 @@ export default function Home() {
 
         {!hasActiveFilters && (
           <>
-            <CarGrid 
+            <CarCarousel 
               cars={newArrivals} 
               title="New Arrivals" 
               subtitle="The latest additions to our premium inventory." 
             />
-            <CarGrid 
+            <CarCarousel 
               cars={recommendations} 
               title="Recommended for You" 
               subtitle="Hand-picked vehicles based on pristine condition and value." 
