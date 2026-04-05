@@ -77,7 +77,7 @@ export function CarCarousel({ cars, title, subtitle, compareIds = [], onToggleCo
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   className="h-full"
                 >
                   <CarCard 

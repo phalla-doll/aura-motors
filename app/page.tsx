@@ -157,6 +157,7 @@ export default function Home() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-md bg-white/80 backdrop-blur-md border border-gray-200/50 text-gray-900 rounded-full shadow-2xl px-6 py-4 flex items-center justify-between"
           >
             <div className="flex items-center gap-3">

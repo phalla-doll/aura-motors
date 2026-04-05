@@ -39,7 +39,7 @@ export function CompareModal({ cars, onClose, onRemove }: CompareModalProps) {
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className="relative w-full max-w-7xl bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]"
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-100">

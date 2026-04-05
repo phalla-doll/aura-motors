@@ -32,7 +32,7 @@ export function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-2"
           >
             Aero Model S
@@ -40,7 +40,7 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.1 }}
             className="text-xl md:text-2xl font-medium text-gray-200"
           >
             Beyond performance.
@@ -52,7 +52,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 mb-12 w-full sm:w-auto"
           >
             <button 

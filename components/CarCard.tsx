@@ -18,7 +18,7 @@ export function CarCard({ car, onClick, isCompared, onToggleCompare }: CarCardPr
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
       className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-shadow duration-300 border border-gray-100 relative"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100 cursor-pointer" onClick={onClick}>
