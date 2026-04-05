@@ -157,28 +157,28 @@ export default function Home() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-md bg-gray-900 text-white rounded-full shadow-2xl px-6 py-4 flex items-center justify-between"
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-md bg-white/80 backdrop-blur-md border border-gray-200/50 text-gray-900 rounded-full shadow-2xl px-6 py-4 flex items-center justify-between"
           >
             <div className="flex items-center gap-3">
-              <div className="bg-white/20 p-2 rounded-full">
+              <div className="bg-gray-100/80 p-2 rounded-full text-gray-900">
                 <Scale size={20} />
               </div>
               <div>
                 <div className="font-medium">{compareIds.length} {compareIds.length === 1 ? 'vehicle' : 'vehicles'} selected</div>
-                <div className="text-xs text-gray-300">Compare up to 4</div>
+                <div className="text-xs text-gray-500">Compare up to 4</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setIsCompareModalOpen(true)}
                 disabled={compareIds.length < 2}
-                className="px-4 py-2 bg-white text-gray-900 rounded-full text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 transition-colors"
+                className="px-4 py-2 bg-gray-900 text-white rounded-full text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-800 transition-colors shadow-sm"
               >
                 Compare
               </button>
               <button
                 onClick={() => setCompareIds([])}
-                className="p-2 text-gray-400 hover:text-white transition-colors rounded-full hover:bg-white/10"
+                className="p-2 text-gray-400 hover:text-gray-900 transition-colors rounded-full hover:bg-gray-100"
                 aria-label="Clear comparison"
               >
                 <X size={20} />
