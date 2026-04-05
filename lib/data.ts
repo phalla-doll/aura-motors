@@ -6,6 +6,7 @@ export type Car = {
   price: number;
   category: string;
   image: string;
+  gallery?: string[];
   tagline: string;
   color: string;
   condition: number;
@@ -31,6 +32,10 @@ export const cars: Car[] = [
     price: 89990,
     category: "Sedan",
     image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2070&auto=format&fit=crop",
+    gallery: [
+      "https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=2071&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=2070&auto=format&fit=crop"
+    ],
     tagline: "Beyond performance.",
     color: "Midnight Silver",
     condition: 100,
