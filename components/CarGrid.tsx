@@ -6,12 +6,25 @@ import { CarCard } from "./CarCard";
 import { CarModal } from "./CarModal";
 import { motion, AnimatePresence } from "motion/react";
 
-export function CarGrid({ cars }: { cars: Car[] }) {
+type CarGridProps = {
+  cars: Car[];
+  title?: string;
+  subtitle?: string;
+};
+
+export function CarGrid({ cars, title, subtitle }: CarGridProps) {
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
 
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {(title || subtitle) && (
+          <div className="mb-8">
+            {title && <h2 className="text-3xl font-bold text-gray-900 tracking-tight">{title}</h2>}
+            {subtitle && <p className="text-gray-500 mt-2">{subtitle}</p>}
+          </div>
+        )}
+        
         {cars.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-24 text-center">
             <h3 className="text-2xl font-semibold text-gray-900 mb-2">No vehicles found</h3>
