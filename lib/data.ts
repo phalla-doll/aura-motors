@@ -233,7 +233,7 @@ export const cars: Car[] = [
     year: 2025,
     price: 42990,
     category: "Sedan",
-    image: "https://images.unsplash.com/photo-1561580125-028ce3bfcb25?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=2071&auto=format&fit=crop",
     tagline: "The car of the future, today.",
     color: "Pearl White",
     condition: 98,
