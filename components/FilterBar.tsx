@@ -40,7 +40,7 @@ export function FilterBar({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-4">
         
         {/* Left side: Selects */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto overflow-x-auto no-scrollbar pb-1 sm:pb-0">
+        <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto overflow-x-auto no-scrollbar p-1">
           <div className="flex gap-3 w-full sm:w-auto">
             {/* Category Filter */}
             <div className="relative w-full sm:w-40 flex-shrink-0">
@@ -102,7 +102,7 @@ export function FilterBar({
         </div>
 
         {/* Right side: Sort & Search */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+        <div className="flex flex-col sm:flex-row items-center gap-3 w-full p-1 lg:w-auto">
           {/* Sort Filter */}
           <div className="relative w-full sm:w-48">
             <select
