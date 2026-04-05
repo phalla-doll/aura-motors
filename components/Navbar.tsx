@@ -73,7 +73,20 @@ export function Navbar() {
                 isScrolled || mobileMenuOpen ? "text-gray-900" : "text-white"
               }`}
             >
-              <button className="p-2 -mr-2 hover:opacity-70 transition-opacity">
+              <button 
+                onClick={() => {
+                  const searchInput = document.getElementById('inventory-search-input');
+                  if (searchInput) {
+                    searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Small delay to allow scroll to start before focusing
+                    setTimeout(() => {
+                      searchInput.focus({ preventScroll: true });
+                    }, 100);
+                  }
+                }}
+                className="p-2 -mr-2 hover:opacity-70 transition-opacity"
+                aria-label="Search inventory"
+              >
                 <Search size={18} />
               </button>
             </div>

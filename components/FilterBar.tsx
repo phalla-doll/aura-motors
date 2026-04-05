@@ -127,6 +127,7 @@ export function FilterBar({
               <Search size={16} className="text-gray-400" />
             </div>
             <input
+              id="inventory-search-input"
               type="text"
               placeholder="Search inventory..."
               value={searchQuery}
