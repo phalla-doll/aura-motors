@@ -48,7 +48,7 @@ export function Navbar() {
                   isScrolled || mobileMenuOpen ? "text-gray-900" : "text-white"
                 }`}
               >
-                Aura
+                Aura Motors
               </Link>
             </div>
 
