@@ -11,9 +11,11 @@ type CarCarouselProps = {
   cars: Car[];
   title: string;
   subtitle?: string;
+  compareIds?: string[];
+  onToggleCompare?: (carId: string) => void;
 };
 
-export function CarCarousel({ cars, title, subtitle }: CarCarouselProps) {
+export function CarCarousel({ cars, title, subtitle, compareIds = [], onToggleCompare }: CarCarouselProps) {
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -78,7 +80,15 @@ export function CarCarousel({ cars, title, subtitle }: CarCarouselProps) {
                   transition={{ duration: 0.3 }}
                   className="h-full"
                 >
-                  <CarCard car={car} onClick={() => setSelectedCar(car)} />
+                  <CarCard 
+                    car={car} 
+                    onClick={() => setSelectedCar(car)}
+                    isCompared={compareIds.includes(car.id)}
+                    onToggleCompare={onToggleCompare ? (e) => {
+                      e.stopPropagation();
+                      onToggleCompare(car.id);
+                    } : undefined}
+                  />
                 </motion.div>
               </div>
             ))}

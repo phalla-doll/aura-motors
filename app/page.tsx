@@ -6,8 +6,11 @@ import { Hero } from "@/components/Hero";
 import { FilterBar } from "@/components/FilterBar";
 import { CarGrid } from "@/components/CarGrid";
 import { CarCarousel } from "@/components/CarCarousel";
+import { CompareModal } from "@/components/CompareModal";
 import { Footer } from "@/components/Footer";
 import { cars } from "@/lib/data";
+import { motion, AnimatePresence } from "motion/react";
+import { Scale, X } from "lucide-react";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -15,6 +18,25 @@ export default function Home() {
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("");
+  
+  const [compareIds, setCompareIds] = useState<string[]>([]);
+  const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
+
+  const handleToggleCompare = (carId: string) => {
+    setCompareIds((prev) => {
+      if (prev.includes(carId)) {
+        return prev.filter((id) => id !== carId);
+      }
+      if (prev.length >= 4) {
+        return prev;
+      }
+      return [...prev, carId];
+    });
+  };
+
+  const comparedCars = useMemo(() => {
+    return cars.filter((car) => compareIds.includes(car.id));
+  }, [compareIds]);
 
   const categories = useMemo(() => {
     const cats = new Set(cars.map((car) => car.category));
@@ -77,7 +99,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#f5f5f7] font-sans selection:bg-gray-900 selection:text-white">
+    <main className="min-h-screen bg-[#f5f5f7] font-sans selection:bg-gray-900 selection:text-white pb-20">
       <Navbar />
       <Hero />
       
@@ -104,11 +126,15 @@ export default function Home() {
               cars={newArrivals} 
               title="New Arrivals" 
               subtitle="The latest additions to our premium inventory." 
+              compareIds={compareIds}
+              onToggleCompare={handleToggleCompare}
             />
             <CarCarousel 
               cars={recommendations} 
               title="Recommended for You" 
               subtitle="Hand-picked vehicles based on pristine condition and value." 
+              compareIds={compareIds}
+              onToggleCompare={handleToggleCompare}
             />
           </>
         )}
@@ -117,10 +143,60 @@ export default function Home() {
           cars={filteredCars} 
           title={hasActiveFilters ? "Search Results" : "All Vehicles"} 
           subtitle={hasActiveFilters ? `Showing ${filteredCars.length} vehicles matching your criteria.` : "Browse our complete collection of premium electric vehicles."}
+          compareIds={compareIds}
+          onToggleCompare={handleToggleCompare}
         />
       </div>
 
       <Footer />
+
+      {/* Floating Compare Banner */}
+      <AnimatePresence>
+        {compareIds.length > 0 && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-[90%] max-w-md bg-gray-900 text-white rounded-full shadow-2xl px-6 py-4 flex items-center justify-between"
+          >
+            <div className="flex items-center gap-3">
+              <div className="bg-white/20 p-2 rounded-full">
+                <Scale size={20} />
+              </div>
+              <div>
+                <div className="font-medium">{compareIds.length} {compareIds.length === 1 ? 'vehicle' : 'vehicles'} selected</div>
+                <div className="text-xs text-gray-300">Compare up to 4</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setIsCompareModalOpen(true)}
+                disabled={compareIds.length < 2}
+                className="px-4 py-2 bg-white text-gray-900 rounded-full text-sm font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 transition-colors"
+              >
+                Compare
+              </button>
+              <button
+                onClick={() => setCompareIds([])}
+                className="p-2 text-gray-400 hover:text-white transition-colors rounded-full hover:bg-white/10"
+                aria-label="Clear comparison"
+              >
+                <X size={20} />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isCompareModalOpen && (
+          <CompareModal 
+            cars={comparedCars} 
+            onClose={() => setIsCompareModalOpen(false)} 
+            onRemove={handleToggleCompare}
+          />
+        )}
+      </AnimatePresence>
     </main>
   );
 }

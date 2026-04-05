@@ -10,9 +10,11 @@ type CarGridProps = {
   cars: Car[];
   title?: string;
   subtitle?: string;
+  compareIds?: string[];
+  onToggleCompare?: (carId: string) => void;
 };
 
-export function CarGrid({ cars, title, subtitle }: CarGridProps) {
+export function CarGrid({ cars, title, subtitle, compareIds = [], onToggleCompare }: CarGridProps) {
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
 
   return (
@@ -46,7 +48,15 @@ export function CarGrid({ cars, title, subtitle }: CarGridProps) {
                   transition={{ duration: 0.3 }}
                   className="h-full"
                 >
-                  <CarCard car={car} onClick={() => setSelectedCar(car)} />
+                  <CarCard 
+                    car={car} 
+                    onClick={() => setSelectedCar(car)}
+                    isCompared={compareIds.includes(car.id)}
+                    onToggleCompare={onToggleCompare ? (e) => {
+                      e.stopPropagation();
+                      onToggleCompare(car.id);
+                    } : undefined}
+                  />
                 </motion.div>
               ))}
             </AnimatePresence>

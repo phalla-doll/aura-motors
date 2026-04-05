@@ -3,17 +3,25 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { Car } from "@/lib/data";
+import { Plus, Check } from "lucide-react";
 
-export function CarCard({ car, onClick }: { car: Car; onClick?: () => void }) {
+type CarCardProps = {
+  car: Car;
+  onClick?: () => void;
+  isCompared?: boolean;
+  onToggleCompare?: (e: React.MouseEvent) => void;
+};
+
+export function CarCard({ car, onClick, isCompared, onToggleCompare }: CarCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-shadow duration-300 border border-gray-100"
+      className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-shadow duration-300 border border-gray-100 relative"
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100 cursor-pointer" onClick={onClick}>
         <Image
           src={car.image}
           alt={`${car.make} ${car.model}`}
@@ -23,8 +31,23 @@ export function CarCard({ car, onClick }: { car: Car; onClick?: () => void }) {
           referrerPolicy="no-referrer"
         />
       </div>
+
+      {onToggleCompare && (
+        <button
+          onClick={onToggleCompare}
+          className={`absolute top-4 left-4 z-10 p-2.5 rounded-full backdrop-blur-md transition-all shadow-sm ${
+            isCompared 
+              ? 'bg-gray-900 text-white hover:bg-gray-800' 
+              : 'bg-white/80 text-gray-900 hover:bg-white'
+          }`}
+          aria-label={isCompared ? "Remove from comparison" : "Add to comparison"}
+          title={isCompared ? "Remove from comparison" : "Add to comparison"}
+        >
+          {isCompared ? <Check size={18} /> : <Plus size={18} />}
+        </button>
+      )}
       
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col flex-grow cursor-pointer" onClick={onClick}>
         <div className="flex justify-between items-start mb-2">
           <div>
             <h3 className="text-xl font-semibold text-gray-900 tracking-tight">
@@ -56,7 +79,6 @@ export function CarCard({ car, onClick }: { car: Car; onClick?: () => void }) {
           </div>
           
           <button 
-            onClick={onClick}
             className="w-full mt-6 py-3 rounded-full bg-gray-900 text-white text-sm font-medium transition-colors hover:bg-gray-800"
           >
             View Details
