@@ -47,7 +47,7 @@ export const cars: Car[] = [
     seller: {
       name: "Alex Johnson",
       phone: "+1 (555) 123-4567",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&h=200&fit=crop",
     },
   },
   {
@@ -69,7 +69,7 @@ export const cars: Car[] = [
     seller: {
       name: "Sarah Williams",
       phone: "+1 (555) 987-6543",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
     },
   },
   {
@@ -91,7 +91,7 @@ export const cars: Car[] = [
     seller: {
       name: "Michael Chen",
       phone: "+1 (555) 345-6789",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=200&h=200&fit=crop",
     },
   },
   {
@@ -113,7 +113,7 @@ export const cars: Car[] = [
     seller: {
       name: "Emily Davis",
       phone: "+1 (555) 234-5678",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
     },
   },
   {
@@ -135,7 +135,7 @@ export const cars: Car[] = [
     seller: {
       name: "David Wilson",
       phone: "+1 (555) 876-5432",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&h=200&fit=crop",
     },
   },
   {
@@ -157,7 +157,7 @@ export const cars: Car[] = [
     seller: {
       name: "Jessica Taylor",
       phone: "+1 (555) 456-7890",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop",
     },
   },
   {
@@ -179,7 +179,7 @@ export const cars: Car[] = [
     seller: {
       name: "Robert Chen",
       phone: "+1 (555) 111-2222",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop",
     },
   },
   {
@@ -201,7 +201,7 @@ export const cars: Car[] = [
     seller: {
       name: "Amanda Wright",
       phone: "+1 (555) 333-4444",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop",
     },
   },
   {
@@ -223,7 +223,7 @@ export const cars: Car[] = [
     seller: {
       name: "Thomas Lee",
       phone: "+1 (555) 555-6666",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
     },
   },
   {
@@ -245,7 +245,7 @@ export const cars: Car[] = [
     seller: {
       name: "Lisa Wong",
       phone: "+1 (555) 777-8888",
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1b4492?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1531123897727-8f129e1b4492?w=200&h=200&fit=crop",
     },
   },
   {
@@ -267,7 +267,7 @@ export const cars: Car[] = [
     seller: {
       name: "James Smith",
       phone: "+1 (555) 999-0000",
-      image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
     },
   },
   {
@@ -289,7 +289,7 @@ export const cars: Car[] = [
     seller: {
       name: "Elena Rossi",
       phone: "+1 (555) 121-2121",
-      image: "https://images.unsplash.com/photo-1548142813-c348350df52b?q=80&w=200&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop",
     },
   }
 ];
