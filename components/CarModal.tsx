@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-import { X, Phone, Mail, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, Phone, Mail, ChevronLeft, ChevronRight, Send } from "lucide-react";
 import { Car } from "@/lib/data";
 
 type CarModalProps = {
@@ -162,27 +162,44 @@ export function CarModal({ car, onClose }: CarModalProps) {
           {/* Seller Section */}
           <div className="mt-auto pt-6 border-t border-gray-100">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Seller</h3>
-            <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-2xl">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-sm">
-                <Image
-                  src={car.seller.image}
-                  alt={car.seller.name}
-                  fill
-                  className="object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="flex-grow">
-                <div className="font-medium text-gray-900">{car.seller.name}</div>
-                <div className="text-sm text-gray-500 flex items-center gap-1.5 mt-1">
-                  <Phone size={14} />
-                  {car.seller.phone}
+            <div className="flex flex-col gap-4 bg-gray-50 p-4 rounded-2xl">
+              <div className="flex items-center gap-4">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-sm">
+                  <Image
+                    src={car.seller.image}
+                    alt={car.seller.name}
+                    fill
+                    className="object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="flex-grow">
+                  <div className="font-medium text-gray-900">{car.seller.name}</div>
+                  <div className="text-sm text-gray-500 flex items-center gap-1.5 mt-1">
+                    <Phone size={14} />
+                    {car.seller.phone}
+                  </div>
                 </div>
               </div>
-              <button className="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors flex items-center gap-2">
-                <Mail size={16} />
-                Message
-              </button>
+              
+              <div className="flex gap-3 mt-2">
+                <a 
+                  href={`tel:${car.seller.phone.replace(/[^0-9+]/g, '')}`}
+                  className="flex-1 py-2.5 bg-white border border-gray-200 text-gray-900 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 shadow-sm"
+                >
+                  <Phone size={16} />
+                  Call
+                </a>
+                <a 
+                  href={`https://t.me/${car.seller.phone.replace(/[^0-9+]/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2.5 bg-[#0088cc] text-white text-sm font-medium rounded-full hover:bg-[#0077b5] transition-colors flex items-center justify-center gap-2 shadow-sm"
+                >
+                  <Send size={16} />
+                  Telegram
+                </a>
+              </div>
             </div>
           </div>
         </div>
