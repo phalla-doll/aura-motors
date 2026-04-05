@@ -74,23 +74,23 @@ export function Hero() {
             className="hidden md:flex items-center justify-center gap-12 text-white"
           >
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold">396 mi</span>
-              <span className="text-xs text-gray-300 uppercase tracking-wider mt-1">Range (EPA est.)</span>
+              <span className="text-2xl font-bold">{heroCar.year}</span>
+              <span className="text-xs text-gray-300 uppercase tracking-wider mt-1">Year</span>
             </div>
             <div className="w-px h-8 bg-white/20" />
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold">1.99 s</span>
-              <span className="text-xs text-gray-300 uppercase tracking-wider mt-1">0-60 mph*</span>
+              <span className="text-2xl font-bold">{heroCar.color}</span>
+              <span className="text-xs text-gray-300 uppercase tracking-wider mt-1">Color</span>
             </div>
             <div className="w-px h-8 bg-white/20" />
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold">200 mph</span>
-              <span className="text-xs text-gray-300 uppercase tracking-wider mt-1">Top Speed</span>
+              <span className="text-2xl font-bold">{heroCar.condition}%</span>
+              <span className="text-xs text-gray-300 uppercase tracking-wider mt-1">Condition</span>
             </div>
             <div className="w-px h-8 bg-white/20" />
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold">1,020 hp</span>
-              <span className="text-xs text-gray-300 uppercase tracking-wider mt-1">Peak Power</span>
+              <span className="text-2xl font-bold">{heroCar.specs.range || "N/A"}</span>
+              <span className="text-xs text-gray-300 uppercase tracking-wider mt-1">Range</span>
             </div>
           </motion.div>
         </div>
