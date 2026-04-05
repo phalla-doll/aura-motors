@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Search, ShoppingBag } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 export function Navbar() {
@@ -75,9 +75,6 @@ export function Navbar() {
             >
               <button className="p-2 -mr-2 hover:opacity-70 transition-opacity">
                 <Search size={18} />
-              </button>
-              <button className="p-2 -mr-2 hover:opacity-70 transition-opacity">
-                <ShoppingBag size={18} />
               </button>
             </div>
           </div>
