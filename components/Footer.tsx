@@ -56,10 +56,10 @@ export function Footer() {
         </div>
         
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-200">
-          <p className="text-sm text-gray-500 mb-4 md:mb-0">
+          <p className="text-sm text-gray-500 mb-4 md:mb-0 text-center md:text-left">
             &copy; {new Date().getFullYear()} Aura Motors. All rights reserved.
           </p>
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
             {["Privacy & Legal", "Vehicle Recalls", "Contact", "News", "Get Updates", "Locations"].map((item) => (
               <Link key={item} href="#" className="text-xs text-gray-500 hover:text-gray-900 transition-colors">
                 {item}
