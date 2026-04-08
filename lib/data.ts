@@ -19,6 +19,7 @@ export type Car = {
   seller: {
     name: string;
     phone: string;
+    email: string;
     image: string;
   };
 };
@@ -47,6 +48,7 @@ export const cars: Car[] = [
     seller: {
       name: "Alex Johnson",
       phone: "+1 (555) 123-4567",
+      email: "alex.johnson@example.com",
       image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&h=200&fit=crop",
     },
   },
@@ -69,6 +71,7 @@ export const cars: Car[] = [
     seller: {
       name: "Sarah Williams",
       phone: "+1 (555) 987-6543",
+      email: "sarah.w@example.com",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
     },
   },
@@ -91,6 +94,7 @@ export const cars: Car[] = [
     seller: {
       name: "Michael Chen",
       phone: "+1 (555) 345-6789",
+      email: "m.chen@example.com",
       image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=200&h=200&fit=crop",
     },
   },
@@ -113,6 +117,7 @@ export const cars: Car[] = [
     seller: {
       name: "Emily Davis",
       phone: "+1 (555) 234-5678",
+      email: "emily.davis@example.com",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
     },
   },
@@ -135,6 +140,7 @@ export const cars: Car[] = [
     seller: {
       name: "David Wilson",
       phone: "+1 (555) 876-5432",
+      email: "dwilson@example.com",
       image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&h=200&fit=crop",
     },
   },
@@ -157,6 +163,7 @@ export const cars: Car[] = [
     seller: {
       name: "Jessica Taylor",
       phone: "+1 (555) 456-7890",
+      email: "j.taylor@example.com",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop",
     },
   },
@@ -179,6 +186,7 @@ export const cars: Car[] = [
     seller: {
       name: "Robert Chen",
       phone: "+1 (555) 111-2222",
+      email: "robert.c@example.com",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop",
     },
   },
@@ -201,6 +209,7 @@ export const cars: Car[] = [
     seller: {
       name: "Amanda Wright",
       phone: "+1 (555) 333-4444",
+      email: "amanda.wright@example.com",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop",
     },
   },
@@ -223,6 +232,7 @@ export const cars: Car[] = [
     seller: {
       name: "Thomas Lee",
       phone: "+1 (555) 555-6666",
+      email: "t.lee@example.com",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
     },
   },
@@ -245,6 +255,7 @@ export const cars: Car[] = [
     seller: {
       name: "Lisa Wong",
       phone: "+1 (555) 777-8888",
+      email: "lwong@example.com",
       image: "https://images.unsplash.com/photo-1531123897727-8f129e1b4492?w=200&h=200&fit=crop",
     },
   },
@@ -267,6 +278,7 @@ export const cars: Car[] = [
     seller: {
       name: "James Smith",
       phone: "+1 (555) 999-0000",
+      email: "jsmith@example.com",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
     },
   },
@@ -289,6 +301,7 @@ export const cars: Car[] = [
     seller: {
       name: "Elena Rossi",
       phone: "+1 (555) 121-2121",
+      email: "elena.rossi@example.com",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop",
     },
   }

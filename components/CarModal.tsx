@@ -211,13 +211,20 @@ export function CarModal({ car, onClose }: CarModalProps) {
                     </div>
                   </div>
                   
-                  <div className="flex gap-3 mt-2">
+                  <div className="flex flex-col sm:flex-row gap-2 mt-3">
                     <a 
                       href={`tel:${car.seller.phone.replace(/[^0-9+]/g, '')}`}
                       className="flex-1 py-2.5 bg-white border border-gray-200 text-gray-900 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 shadow-sm"
                     >
                       <Phone size={16} />
                       Call
+                    </a>
+                    <a 
+                      href={`mailto:${car.seller.email}`}
+                      className="flex-1 py-2.5 bg-white border border-gray-200 text-gray-900 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 shadow-sm"
+                    >
+                      <Mail size={16} />
+                      Email
                     </a>
                     <a 
                       href={`https://t.me/${car.seller.phone.replace(/[^0-9+]/g, '')}`}
