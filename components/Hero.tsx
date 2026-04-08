@@ -62,7 +62,7 @@ export function Hero() {
               Order Now
             </button>
             <button className="px-8 py-3 rounded-full bg-black/50 backdrop-blur-md text-white font-medium text-sm border border-white/20 transition-transform hover:scale-105 active:scale-95 w-full sm:w-64">
-              Demo Drive
+              Store Locations
             </button>
           </motion.div>
 
