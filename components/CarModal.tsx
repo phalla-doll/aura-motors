@@ -214,14 +214,14 @@ export function CarModal({ car, onClose }: CarModalProps) {
                   <div className="flex flex-col sm:flex-row gap-2 mt-3">
                     <a 
                       href={`tel:${car.seller.phone.replace(/[^0-9+]/g, '')}`}
-                      className="flex-1 py-2.5 bg-white border border-gray-200 text-gray-900 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 shadow-sm"
+                      className="flex-1 py-2.5 bg-white border border-gray-200 text-gray-900 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
                     >
                       <Phone size={16} />
                       Call
                     </a>
                     <a 
                       href={`mailto:${car.seller.email}`}
-                      className="flex-1 py-2.5 bg-white border border-gray-200 text-gray-900 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 shadow-sm"
+                      className="flex-1 py-2.5 bg-white border border-gray-200 text-gray-900 text-sm font-medium rounded-full hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
                     >
                       <Mail size={16} />
                       Email
@@ -230,7 +230,7 @@ export function CarModal({ car, onClose }: CarModalProps) {
                       href={`https://t.me/${car.seller.phone.replace(/[^0-9+]/g, '')}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-2.5 bg-[#0088cc] text-white text-sm font-medium rounded-full hover:bg-[#0077b5] transition-colors flex items-center justify-center gap-2 shadow-sm"
+                      className="flex-1 py-2.5 bg-[#0088cc] text-white text-sm font-medium rounded-full hover:bg-[#0077b5] transition-colors flex items-center justify-center gap-2"
                     >
                       <Send size={16} />
                       Telegram
