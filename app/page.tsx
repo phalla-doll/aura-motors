@@ -8,6 +8,7 @@ import { CarGrid } from "@/components/CarGrid";
 import { CarCarousel } from "@/components/CarCarousel";
 import { CompareModal } from "@/components/CompareModal";
 import { Footer } from "@/components/Footer";
+import { StoreMap } from "@/components/StoreMap";
 import { cars } from "@/lib/data";
 import { motion, AnimatePresence } from "motion/react";
 import { Scale, X } from "lucide-react";
@@ -147,6 +148,8 @@ export default function Home() {
           onToggleCompare={handleToggleCompare}
         />
       </div>
+
+      <StoreMap />
 
       <Footer />
 
